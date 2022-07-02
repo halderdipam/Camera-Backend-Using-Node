@@ -1,0 +1,10 @@
+[Unit]
+Description=troika dashboard backend
+After=network.target vasd.service
+[Service]
+User=troikaa
+WorkingDirectory=/home/troikaa/Documents/troikaa-backend
+ExecStart=/usr/bin/node /home/troikaa/Documents/troikaa-backend/index.js > /home/troikaa/Documents/troikaa-backend/log.txt
+Restart=on-failure
+[Install]
+WantedBy=multi-user.target
